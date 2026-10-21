@@ -650,6 +650,27 @@
   }
 }
 
+/* Espacement du menu de navigation */
+.nav-links {
+  gap: 24px !important;
+}
+
+.nav-links > a {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .nav-links {
+    gap: 18px !important;
+  }
+
+  .nav-links > a {
+    white-space: normal;
+  }
+}
+
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"ORVANE","description":"Production de témoignages clients vidéo pour les agences de services B2B.","url":"https://orvane-website.texentreprises.workers.dev/","areaServed":["France","Belgique","Suisse romande"],"serviceType":"Témoignages clients vidéo B2B"}
