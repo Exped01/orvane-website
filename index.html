@@ -602,6 +602,54 @@
       .brand-mark { width: 37px; height: 37px; }
       .brand-sub { font-size: 7px; }
     }
+    
+.linkedin-cta {
+  margin: 24px 0;
+}
+
+.linkedin-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 15px 22px;
+  background-color: #254C3A;
+  color: #F2EDE2 !important;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: none !important;
+  border: 1px solid #254C3A;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(37, 76, 58, 0.15);
+  transition:
+    background-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.linkedin-button:hover {
+  background-color: #193729;
+  border-color: #193729;
+  color: #FFFFFF !important;
+  transform: translateY(-2px);
+  box-shadow: 0 7px 18px rgba(37, 76, 58, 0.22);
+}
+
+.linkedin-button:focus-visible {
+  outline: 3px solid #D1A96B;
+  outline-offset: 4px;
+}
+
+@media (max-width: 480px) {
+  .linkedin-button {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px 16px;
+  }
+}
+
   </style>
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"ProfessionalService","name":"ORVANE","description":"Production de témoignages clients vidéo pour les agences de services B2B.","url":"https://orvane-website.texentreprises.workers.dev/","areaServed":["France","Belgique","Suisse romande"],"serviceType":"Témoignages clients vidéo B2B"}
@@ -853,7 +901,19 @@
           <a href="https://www.linkedin.com/company/146735818/"
    target="_blank"
    rel="noopener noreferrer">
-  Parlons de vos témoignages clients sur LinkedIn.
+
+<p class="linkedin-cta">
+  <a
+    class="linkedin-button"
+    href="https://www.linkedin.com/company/146735818/"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Parlons de vos témoignages clients
+    <span aria-hidden="true">↗</span>
+  </a>
+</p>
+
 </a>
         </p>
       </div>
