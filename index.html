@@ -5,12 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#254C3A">
-  <meta name="description" content="ORVANE accompagne les agences B2B dans la collecte et la production de témoignages clients vidéo authentiques et exploitables.">
-  <title>ORVANE — Customer Proof for B2B</title>
+  <meta name="description" content="ORVANE accompagne les agences B2B dans la collecte et la production de témoignages clients vidéo authentiques : entretien guidé, vidéo principale, extraits courts et citations.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ORVANE — Des expériences clients réelles. Des preuves crédibles.">
+  <meta property="og:description" content="Nous transformons les expériences réelles de vos clients en témoignages vidéo clairs et exploitables pour votre communication commerciale B2B.">
+  <meta property="og:locale" content="fr_FR">
+  <link rel="canonical" href="https://orvane-website.texentreprises.workers.dev/">
+  <title>ORVANE — Témoignages clients vidéo pour agences B2B</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -25,6 +31,7 @@
       --serif: Georgia, "Times New Roman", serif;
       --sans: "DM Sans", Arial, sans-serif;
       --display: "Manrope", Arial, sans-serif;
+      --accent-serif: "Playfair Display", Georgia, serif;
     }
 
     * { box-sizing: border-box; }
@@ -473,6 +480,98 @@
       font-size: 11px;
     }
 
+
+    /* Refonte visuelle : images, tarifs, transitions et navigation responsive */
+    .site-header { position: sticky; top: 0; z-index: 20; background: rgba(250,248,243,.94); backdrop-filter: blur(12px); }
+    .nav-links { display:flex; align-items:center; gap:24px; }
+    .button { border-radius:2px; }
+    .hero { padding:76px 0 88px; }
+    .hero-grid { display:grid; grid-template-columns:1.05fr .95fr; gap:54px; align-items:center; }
+    .hero-visual { position:relative; min-height:460px; }
+    .hero-photo { position:absolute; inset:0 24px 25px 18px; overflow:hidden; background:#d8d5ca; }
+    .hero-photo img { width:100%; height:100%; object-fit:cover; }
+    .hero-photo:after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 45%,rgba(25,54,41,.32)); }
+    .visual-stamp { position:absolute; z-index:2; right:0; top:0; width:105px; height:105px; display:grid; place-items:center; padding:12px; border-radius:50%; background:var(--green); color:var(--cream); text-align:center; font-family:var(--accent-serif); font-size:13px; line-height:1.4; transform:rotate(7deg); }
+    .visual-caption { position:absolute; z-index:3; left:0; bottom:0; width:min(290px,85%); padding:19px 22px; background:var(--cream); box-shadow:0 18px 48px rgba(25,54,41,.14); }
+    .visual-caption small { display:block; margin-bottom:5px; color:var(--green); font-size:9px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; }
+    .visual-caption strong { font-family:var(--display); font-size:15px; line-height:1.45; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; align-items:center; }
+    .button-outline { color:var(--green); background:transparent; border:1px solid var(--green); }
+    .button-outline:hover { background:var(--green); color:white; }
+    .proof-strip { padding:20px 0; background:var(--cream); border-block:1px solid var(--line); }
+    .proof-strip-inner { display:flex; justify-content:space-between; align-items:center; gap:20px; }
+    .proof-strip-inner p { margin:0; font-family:var(--accent-serif); font-size:clamp(16px,2vw,21px); }
+    .proof-strip-inner span { color:var(--muted); font-size:10px; letter-spacing:1.2px; text-transform:uppercase; }
+    .serif-accent { color:var(--green); font-family:var(--accent-serif); font-weight:500; }
+    .principle h2 em { font-family:var(--accent-serif); }
+    .transformation { background:#E9E4D8; }
+    .transform-head { display:flex; align-items:end; justify-content:space-between; gap:28px; margin-bottom:36px; }
+    .transform-head .section-heading { margin-bottom:0; }
+    .transform-head > p { max-width:330px; color:var(--muted); font-size:12px; line-height:1.8; }
+    .transform-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .transform-card { min-height:315px; padding:27px; }
+    .transform-card.before { background:#D7D2C7; }
+    .transform-card.after { background:var(--green); color:var(--cream); }
+    .transform-tag { display:inline-block; padding:6px 9px; margin-bottom:47px; background:rgba(255,255,255,.62); font-size:9px; font-weight:700; letter-spacing:1.2px; text-transform:uppercase; }
+    .after .transform-tag { background:#D8C9A9; color:var(--green-dark); }
+    .transform-card h3 { max-width:420px; font-family:var(--display); font-size:clamp(22px,2.7vw,31px); line-height:1.22; letter-spacing:-.8px; }
+    .transform-card p { max-width:450px; color:#5d5b53; font-size:13px; line-height:1.8; }
+    .transform-card.after p { color:#d7dfd6; }
+    .transform-points { display:flex; flex-wrap:wrap; gap:7px; margin-top:18px; }
+    .transform-points span { padding:6px 9px; border:1px solid rgba(40,40,36,.2); font-size:10px; }
+    .after .transform-points span { border-color:rgba(255,255,255,.3); }
+    .note-small { margin:15px 0 0; color:var(--muted); font-size:10px; }
+    .pricing { background:var(--paper); }
+    .pricing-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:17px; align-items:stretch; }
+    .price-card { display:flex; flex-direction:column; padding:27px 23px 24px; border:1px solid var(--line); background:#fffdf9; }
+    .price-card.featured { border:1px solid var(--green); box-shadow:0 18px 45px rgba(25,54,41,.11); transform:translateY(-7px); }
+    .price-badge { align-self:flex-start; padding:6px 9px; margin-bottom:16px; background:var(--cream); color:var(--green); font-size:9px; font-weight:700; letter-spacing:.8px; text-transform:uppercase; }
+    .price-card h3 { margin-bottom:5px; font-family:var(--display); font-size:17px; }
+    .price-desc { min-height:42px; margin-bottom:20px; color:var(--muted); font-size:12px; }
+    .price { margin-bottom:1px; color:var(--green); font-family:var(--display); font-size:clamp(32px,3.4vw,42px); font-weight:800; letter-spacing:-1.5px; line-height:1.3; }
+    .price-unit { margin-bottom:21px; color:var(--muted); font-size:10px; }
+    .price-divider { width:100%; margin:0 0 18px; border:0; border-top:1px solid var(--line); }
+    .price-includes { display:grid; gap:11px; padding:0; margin:0 0 24px; list-style:none; }
+    .price-includes li { position:relative; padding-left:20px; color:#55554d; font-size:11px; line-height:1.65; }
+    .price-includes li:before { content:"✓"; position:absolute; left:0; color:var(--green); font-weight:700; }
+    .price-card .button { width:100%; margin-top:auto; padding-inline:12px; font-size:11px; }
+    .pricing-note { max-width:850px; margin:25px auto 0; color:var(--muted); text-align:center; font-size:11px; line-height:1.8; }
+    .faq-list { max-width:850px; border-top:1px solid var(--line); }
+    .faq-list details { border-bottom:1px solid var(--line); }
+    .faq-list summary { position:relative; padding:19px 40px 19px 0; font-family:var(--display); font-size:14px; font-weight:700; cursor:pointer; list-style:none; }
+    .faq-list summary::-webkit-details-marker { display:none; }
+    .faq-list summary:after { content:"+"; position:absolute; right:5px; top:13px; color:var(--green); font-size:23px; font-weight:400; }
+    .faq-list details[open] summary:after { content:"−"; }
+    .faq-list details p { max-width:760px; padding:0 25px 19px 0; margin:0; color:var(--muted); font-size:12px; line-height:1.9; }
+    .closing { position:relative; overflow:hidden; background:var(--green-dark); color:var(--cream); }
+    .closing:before,.closing:after { content:""; position:absolute; width:300px; height:300px; border:1px solid rgba(242,237,226,.12); border-radius:50%; pointer-events:none; }
+    .closing:before { left:-180px; top:-130px; }
+    .closing:after { right:-170px; bottom:-200px; width:400px; height:400px; }
+    .closing .container { position:relative; z-index:1; }
+    .closing .eyebrow { justify-content:center; color:#C6D5C8; }
+    .closing h2 em { color:#D8C9A9; font-family:var(--accent-serif); }
+    .button-light { color:var(--green-dark); background:var(--cream); border-color:var(--cream); }
+    .button-light:hover { background:#fff; color:var(--green-dark); }
+    .nav-links a:not(.button):hover,.footer-links a:hover { color:var(--green-mid); }
+    .reveal { opacity:0; transform:translateY(16px); transition:opacity .6s ease,transform .6s ease; }
+    .reveal.is-visible { opacity:1; transform:translateY(0); }
+    @media (prefers-reduced-motion: reduce) { html{scroll-behavior:auto} *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important} .reveal{opacity:1;transform:none} }
+    @media(max-width:900px) { .hero-grid{gap:30px} .hero-visual{min-height:400px} .nav-links{gap:13px} .nav-links .button{padding-inline:14px} .price-card{padding-inline:17px} }
+    @media(max-width:760px) {
+      .container{width:min(100% - 36px,560px)}
+      .nav{position:relative;min-height:76px}
+      .nav-toggle{display:grid!important;place-items:center;width:42px;height:42px;border:1px solid var(--line);background:transparent;color:var(--green);font-size:22px;cursor:pointer}
+      .nav-links{display:none;position:absolute;top:100%;left:-18px;right:-18px;padding:20px 22px 24px;background:var(--paper);border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(25,54,41,.08);align-items:stretch;flex-direction:column;gap:17px}
+      .nav-links.open{display:flex}.nav-links .button{width:100%}
+      .hero{padding:54px 0 60px}.hero-grid{grid-template-columns:1fr;gap:34px} h1{font-size:clamp(42px,10vw,62px);letter-spacing:-2.5px}.hero-copy{font-size:15px}.hero-visual{min-height:370px;margin-right:8px}
+      .proof-strip-inner{align-items:flex-start;flex-direction:column;gap:5px} section.content-section{padding:72px 0}
+      .principle-inner,.offer-layout,.trust-layout{grid-template-columns:1fr;gap:28px}.problem-grid{grid-template-columns:1fr}.problem-card{padding:23px 0}.problem-card+.problem-card{border-left:0;border-top:1px solid var(--line);padding-left:0}.number{margin-bottom:12px}
+      .transform-head{align-items:flex-start;flex-direction:column;gap:8px}.transform-grid{grid-template-columns:1fr}.transform-card{min-height:285px;padding:23px}.transform-tag{margin-bottom:35px}
+      .pricing-grid{grid-template-columns:1fr}.price-card.featured{transform:none}.price-desc{min-height:0}.price{font-size:42px}
+      .method-grid{grid-template-columns:repeat(2,1fr);gap:28px 20px}.closing{padding:72px 0}.footer-inner{align-items:flex-start;flex-direction:column}
+    }
+    @media(max-width:420px){.container{width:calc(100% - 30px)}.hero-actions{align-items:stretch;flex-direction:column}.hero-actions .button{width:100%}.hero-visual{min-height:320px}.method-grid{grid-template-columns:1fr}}
+
     @media (max-width: 760px) {
       .container { width: min(100% - 36px, 560px); }
       .nav { min-height: 76px; }
@@ -504,6 +603,9 @@
       .brand-sub { font-size: 7px; }
     }
   </style>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"ProfessionalService","name":"ORVANE","description":"Production de témoignages clients vidéo pour les agences de services B2B.","url":"https://orvane-website.texentreprises.workers.dev/","areaServed":["France","Belgique","Suisse romande"],"serviceType":"Témoignages clients vidéo B2B"}
+  </script>
 </head>
 
 <body>
@@ -518,27 +620,35 @@
           <span class="brand-sub">CUSTOMER PROOF FOR B2B</span>
         </span>
       </a>
-      <a class="nav-link" href="#offre">Découvrir notre approche &nbsp;↗</a>
+      <button class="nav-toggle" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="nav-links" style="display:none">☰</button>
+      <nav class="nav-links" id="nav-links" aria-label="Navigation principale">
+        <a class="nav-link" href="#approche">Notre approche</a>
+        <a class="nav-link" href="#offre">L'offre</a>
+        <a class="nav-link" href="#tarifs">Tarifs</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+        <a class="button" href="https://www.linkedin.com/company/146735818/" target="_blank" rel="noopener noreferrer">Parlons de votre projet <span class="arrow">↗</span></a>
+      </nav>
     </div>
   </header>
 
   <main>
     <section class="hero" id="accueil">
-      <div class="container">
-        <div class="eyebrow">Témoignages clients · Services B2B</div>
-        <h1>Votre valeur mérite d'être <em>entendue.</em></h1>
-        <p class="hero-copy">
-          Vos clients connaissent la valeur de votre travail. Vos futurs clients,
-          eux, ont besoin de la comprendre. ORVANE transforme les expériences
-          réelles de vos clients en témoignages vidéo clairs, authentiques et
-          exploitables dans votre communication commerciale.
-        </p>
-        <a class="button" href="#offre">
-          Découvrir Customer Story <span class="arrow">↗</span>
-        </a>
-        <p class="hero-note">Des histoires réelles. Des preuves crédibles.</p>
+      <div class="container hero-grid">
+        <div class="hero-content reveal">
+          <div class="eyebrow">Témoignages clients · Services B2B</div>
+          <h1>Votre valeur mérite d'être <em>entendue.</em></h1>
+          <p class="hero-copy">Vos clients connaissent la valeur de votre travail. Vos futurs clients, eux, ont besoin de la comprendre. ORVANE transforme les expériences réelles de vos clients en témoignages vidéo clairs, authentiques et exploitables dans votre communication commerciale.</p>
+          <div class="hero-actions"><a class="button" href="#tarifs">Découvrir les formules <span class="arrow">↘</span></a><a class="button button-outline" href="#approche">Notre méthode</a></div>
+          <p class="hero-note">Un processus pris en charge de la préparation à la livraison.</p>
+        </div>
+        <div class="hero-visual reveal" aria-label="Illustration d'un environnement professionnel">
+          <div class="hero-photo"><img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=1100&q=85" alt="Professionnels en discussion dans un environnement de travail" width="1100" height="1300" fetchpriority="high"></div>
+          <div class="visual-stamp">Des histoires<br>réelles.<br>Des preuves<br>crédibles.</div>
+          <div class="visual-caption"><small>La méthode ORVANE</small><strong>Une expérience client. Plusieurs contenus utiles.</strong></div>
+        </div>
       </div>
     </section>
+    <section class="proof-strip"><div class="container proof-strip-inner"><p>La crédibilité ne se décrète pas. Elle se documente.</p><span>Authenticité · Clarté · Rigueur</span></div></section>
 
     <section class="principle">
       <div class="container principle-inner">
@@ -547,9 +657,9 @@
       </div>
     </section>
 
-    <section class="content-section">
+    <section class="content-section" id="approche">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <div class="section-label">Le constat</div>
           <h2>Vos clients ont vécu l'expérience. Encore faut-il lui donner la parole.</h2>
           <p>
@@ -575,6 +685,17 @@
             <p>Un retour positif ne suffit pas toujours : il faut une histoire claire, des éléments concrets et des formats réutilisables.</p>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section class="content-section transformation">
+      <div class="container">
+        <div class="transform-head reveal"><div class="section-heading"><div class="section-label">De l'expérience à la preuve</div><h2>Passer d'un bon travail peu visible à une histoire <span class="serif-accent">que l'on peut partager.</span></h2></div><p>Voici le changement de processus que nous aidons à mettre en place — pas une étude de cas client ni une promesse de résultat.</p></div>
+        <div class="transform-grid">
+          <article class="transform-card before reveal"><span class="transform-tag">Avant · Sans processus dédié</span><h3>« Nos clients sont satisfaits… mais comment le montrer ? »</h3><p>Les retours restent dispersés, l'organisation du témoignage est repoussée et l'équipe manque de temps pour en faire un contenu structuré.</p><div class="transform-points"><span>Retours informels</span><span>Coordination manuelle</span><span>Preuves dispersées</span></div></article>
+          <article class="transform-card after reveal"><span class="transform-tag">Avec ORVANE · Un processus structuré</span><h3>Une expérience client transformée en contenus prêts à exploiter.</h3><p>Un entretien guidé donne naissance à une vidéo principale, des extraits courts, une transcription et des citations fidèles aux propos du témoin.</p><div class="transform-points"><span>Vidéo principale</span><span>3 extraits courts</span><span>Transcription & citations</span></div></article>
+        </div>
+        <p class="note-small">Illustration du processus proposé. Ces éléments ne constituent pas des résultats clients réels ni une garantie de performance commerciale.</p>
       </div>
     </section>
 
@@ -630,9 +751,21 @@
       </div>
     </section>
 
+    <section class="content-section pricing" id="tarifs">
+      <div class="container">
+        <div class="section-heading reveal"><div class="section-label">Des formules lisibles</div><h2>Choisissez le volume adapté à <span class="serif-accent">vos besoins.</span></h2><p>Chaque témoignage suit le même socle de production. Les formules multi-témoignages sont pensées pour les agences qui souhaitent structurer plusieurs histoires clients.</p></div>
+        <div class="pricing-grid">
+          <article class="price-card reveal"><span class="price-badge">Pour démarrer</span><h3>Customer Story · Solo</h3><p class="price-desc">Un témoignage client pour documenter une collaboration.</p><div class="price">1 000 €</div><div class="price-unit">Pour 1 témoignage</div><hr class="price-divider"><ul class="price-includes"><li>1 entretien guidé à distance (30–45 min)</li><li>1 vidéo principale de 2 à 3 minutes</li><li>3 extraits courts sous-titrés</li><li>Transcription et sélection de citations</li><li>Coordination, vérification et 1 cycle de corrections consolidées</li></ul><a class="button button-outline" href="https://www.linkedin.com/company/146735818/" target="_blank" rel="noopener noreferrer">Discuter de cette formule <span class="arrow">↗</span></a></article>
+          <article class="price-card featured reveal"><span class="price-badge">Formule multi-témoignages</span><h3>Customer Story · Trio</h3><p class="price-desc">Trois expériences clients pour enrichir vos preuves commerciales.</p><div class="price">2 500 €</div><div class="price-unit">Pour 3 témoignages · environ 833 € par témoignage</div><hr class="price-divider"><ul class="price-includes"><li>3 entretiens guidés, un par témoin</li><li>3 vidéos principales de 2 à 3 minutes</li><li>9 extraits courts sous-titrés</li><li>3 transcriptions et sélections de citations</li><li>Coordination et 1 cycle de corrections par témoignage</li></ul><a class="button" href="https://www.linkedin.com/company/146735818/" target="_blank" rel="noopener noreferrer">Discuter de cette formule <span class="arrow">↗</span></a></article>
+          <article class="price-card reveal"><span class="price-badge">Pour structurer la preuve</span><h3>Customer Story · Collection</h3><p class="price-desc">Six expériences clients pour construire une bibliothèque de témoignages.</p><div class="price">5 500 €</div><div class="price-unit">Pour 6 témoignages · environ 917 € par témoignage</div><hr class="price-divider"><ul class="price-includes"><li>6 entretiens guidés, un par témoin</li><li>6 vidéos principales de 2 à 3 minutes</li><li>18 extraits courts sous-titrés</li><li>6 transcriptions et sélections de citations</li><li>Coordination et 1 cycle de corrections par témoignage</li></ul><a class="button button-outline" href="https://www.linkedin.com/company/146735818/" target="_blank" rel="noopener noreferrer">Discuter de cette formule <span class="arrow">↗</span></a></article>
+        </div>
+        <p class="pricing-note">Tarifs de lancement indicatifs, à confirmer selon le périmètre final, le calendrier et les conditions applicables. Déplacements, demandes supplémentaires, traductions, adaptations complexes et cycles de corrections additionnels non inclus. Aucun résultat commercial n'est garanti. Le délai est confirmé après validation du périmètre et disponibilité des témoins.</p>
+      </div>
+    </section>
+
     <section class="content-section">
       <div class="container">
-        <div class="section-heading">
+        <div class="section-heading reveal">
           <div class="section-label">Notre méthode</div>
           <h2>Un processus défini. Une collaboration simple.</h2>
           <p>Nous prenons en charge la production tout en laissant à votre agence la relation avec son client.</p>
@@ -695,6 +828,19 @@
       </div>
     </section>
 
+    <section class="content-section" id="faq">
+      <div class="container"><div class="section-heading reveal"><div class="section-label">Questions fréquentes</div><h2>Les informations utiles, <span class="serif-accent">sans détour.</span></h2></div>
+        <div class="faq-list reveal">
+          <details><summary>À qui s'adresse ORVANE ?</summary><p>Nous nous adressons principalement aux agences de services B2B — notamment en prospection, génération de leads et acquisition digitale — qui souhaitent mieux valoriser les expériences réelles de leurs clients.</p></details>
+          <details><summary>Qui contacte le client témoin ?</summary><p>Votre équipe introduit ou approuve le témoin ; ORVANE prend ensuite en charge la coordination pratique et la préparation de l'entretien, selon le processus convenu avec votre agence.</p></details>
+          <details><summary>Combien de temps faut-il pour produire un témoignage ?</summary><p>À titre indicatif, le cycle vise environ dix jours ouvrés après l'entretien, sous réserve de disponibilité du témoin et des validations nécessaires.</p></details>
+          <details><summary>Que comprennent les corrections ?</summary><p>Chaque témoignage comprend un cycle de corrections consolidées. Les demandes additionnelles, changements de direction après validation ou adaptations hors périmètre peuvent faire l'objet d'un devis complémentaire convenu à l'avance.</p></details>
+          <details><summary>Garantissez-vous un témoignage positif ou des résultats commerciaux ?</summary><p>Non. Le témoignage doit refléter l'expérience réelle et les propos du client. Nous ne garantissons ni sa participation, ni un avis positif, ni un impact commercial précis.</p></details>
+          <details><summary>Les prix affichés sont-ils définitifs ?</summary><p>Il s'agit de tarifs de lancement indicatifs. Le prix final et les conditions applicables sont confirmés par écrit avant le démarrage, après clarification du périmètre et du calendrier.</p></details>
+        </div>
+      </div>
+    </section>
+
     <section class="closing" id="contact">
       <div class="container">
         <div class="eyebrow">ORVANE · Customer Proof for B2B</div>
@@ -704,7 +850,7 @@
           les expériences de vos clients ? Échangeons sur votre besoin.
         </p>
         <p style="font-size:12px;">
-          <a href="https://www.linkedin.com/company/146735818/admin/dashboard/"
+          <a href="https://www.linkedin.com/company/146735818/"
    target="_blank"
    rel="noopener noreferrer">
   Parlons de vos témoignages clients sur LinkedIn.
@@ -720,12 +866,35 @@
         <div class="footer-brand">ORVANE</div>
         <p class="footer-note">Real Stories. Credible Proof.</p>
       </div>
+      <div class="footer-links"><a href="#approche">Notre approche</a><a href="#tarifs">Tarifs</a><a href="#faq">FAQ</a><a href="https://www.linkedin.com/company/146735818/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div>
       <div class="copyright">© <span id="year">2026</span> ORVANE. Tous droits réservés.</div>
     </div>
   </footer>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
+
+    const menuButton = document.querySelector(".nav-toggle");
+    const navLinks = document.querySelector(".nav-links");
+    menuButton.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+      menuButton.setAttribute("aria-expanded", String(isOpen));
+      menuButton.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
+      menuButton.textContent = isOpen ? "×" : "☰";
+    });
+    navLinks.querySelectorAll("a").forEach(link => link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuButton.setAttribute("aria-expanded", "false");
+      menuButton.setAttribute("aria-label", "Ouvrir le menu");
+      menuButton.textContent = "☰";
+    }));
+    const revealItems = document.querySelectorAll(".reveal");
+    if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+        if (entry.isIntersecting) { entry.target.classList.add("is-visible"); observer.unobserve(entry.target); }
+      }), { threshold: 0.12 });
+      revealItems.forEach(item => observer.observe(item));
+    } else { revealItems.forEach(item => item.classList.add("is-visible")); }
   </script>
 </body>
 </html>
